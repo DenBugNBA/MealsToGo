@@ -28,7 +28,7 @@ const SpacerView = styled.View`
 `;
 
 export const Spacer = ({ position, size, children }) => {
-  //   console.log("Position: ", position, "Size: ", size);
+  //   console.log("Position:", position, "Size:", size);
   const theme = useTheme();
   const variant = getVariant(position, size, theme);
   return <SpacerView variant={variant}>{children}</SpacerView>;
