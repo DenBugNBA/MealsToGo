@@ -1,6 +1,6 @@
 import React from "react";
 
-import { StyleSheet, StatusBar, SafeAreaView } from "react-native";
+import { StatusBar, SafeAreaView } from "react-native";
 import { Searchbar } from "react-native-paper";
 
 import styled from "styled-components/native";
@@ -32,5 +32,3 @@ export const RestaurantsScreen = () => (
     </RestaurantListContainer>
   </SafeArea>
 );
-
-const styles = StyleSheet.create({});
