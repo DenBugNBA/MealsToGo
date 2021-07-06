@@ -11,6 +11,7 @@ import { Ionicons } from "@expo/vector-icons/";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
 import { theme } from "./src/infrastructure/theme/index";
 import { SafeArea } from "./src/components/utility/safe-area.component";
+import { restaurantsRequest } from "./src/services/restaurants/restaurants.service";
 
 import {
   useFonts as useOswald,
@@ -31,6 +32,7 @@ const Settings = () => (
     <Text>Settings</Text>
   </SafeArea>
 );
+
 const Map = () => (
   <SafeArea>
     <Text>Map</Text>
