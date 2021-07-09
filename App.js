@@ -11,7 +11,7 @@ import { Ionicons } from "@expo/vector-icons/";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
 import { theme } from "./src/infrastructure/theme/index";
 import { SafeArea } from "./src/components/utility/safe-area.component";
-import { restaurantsRequest } from "./src/services/restaurants/restaurants.service";
+import { RestraurantContextProvider } from "./src/services/restaurants/restaurants.context";
 
 import {
   useFonts as useOswald,
@@ -63,19 +63,22 @@ export default function App() {
     return (
       <>
         <ThemeProvider theme={theme}>
-          <NavigationContainer>
-            <Tab.Navigator
-              screenOptions={createScreenOptions}
-              tabBarOptions={{
-                activeTintColor: "black",
-                inactiveTintColor: "gray",
-              }}
-            >
-              <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
-              <Tab.Screen name="Map" component={Map} />
-              <Tab.Screen name="Settings" component={Settings} />
-            </Tab.Navigator>
-          </NavigationContainer>
+          <RestraurantContextProvider>
+            <NavigationContainer>
+              <Tab.Navigator
+                screenOptions={createScreenOptions}
+                tabBarOptions={{
+                  // activeTintColor: "tomato",
+                  activeTintColor: "black",
+                  inactiveTintColor: "gray",
+                }}
+              >
+                <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
+                <Tab.Screen name="Map" component={Map} />
+                <Tab.Screen name="Settings" component={Settings} />
+              </Tab.Navigator>
+            </NavigationContainer>
+          </RestraurantContextProvider>
         </ThemeProvider>
         <ExpoStatusBar style="auto" />
       </>
